@@ -2,7 +2,7 @@ const { test, expect } = require('@playwright/test');
 const { timeout } = require('../playwright.config');
 
 test('Customer Registration by office', async ({ page }) => {
-await page.goto('http://172.31.1.13:1902/',{timeout:60000});
+ await page.goto('http://172.31.1.13:1902/',{timeout:10000});
   // login dashboard
   //import { test, expect } from '@playwright/test';
 
