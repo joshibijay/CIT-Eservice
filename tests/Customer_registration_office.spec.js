@@ -146,7 +146,7 @@ await page.getByRole('tab', { name: 'Document' }).click();
       await page.setInputFiles('#LocationFileDoc','Upload/CIT_location_image.jpg');
 
 //Scheme Opening
-await page.getByText('Scheme Opening').click();
+await page.getByText('Scheme Opening').click();// click scheme opening
       await page.locator('#btnAcGroupSearch').click();
       await page.getByText('KBB').dblclick();
       await page.getByLabel('Contributory Option *').selectOption('1');
