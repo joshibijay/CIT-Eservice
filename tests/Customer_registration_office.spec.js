@@ -159,3 +159,4 @@ await page.locator('#btnSave').click();
   // Perform actions on the page...
 
   // No need to close the browser manually, @playwright/test handles it
+  //cloned by jasu mulmi
