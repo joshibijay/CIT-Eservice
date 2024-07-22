@@ -16,10 +16,10 @@ await page.waitForTimeout(1000);
 
 //Transaction
 await page.locator('#IndexCreate').click();
-const customer_code = '0011148222';
-await page.fill('#CustomerCode', customer_code);
-await page.keyboard.press('Enter');
-await page.waitForTimeout(2000);
+await page.locator('#CustomerNameSearch').click();
+await page.waitForTimeout(1000);
+await page.getByRole('cell', { name: 'USHA BASTOLA' }).dblclick();
+await page.waitForTimeout(1000);
 await page.locator('#YearSearch').click();
 await page.waitForTimeout(500);
 await page.getByRole('cell', { name: '2080' }).dblclick();
@@ -29,9 +29,11 @@ await page.locator('#MonthId').selectOption('1');
 await page.locator('#PaymentMode').selectOption('2');
 await page.locator('#PayerBankAcAliasSearch').click();
 await page.waitForTimeout(1000);
-await page.getByTitle('NIC ASIA BANK LIMITED').dblclick();
+await page.getByText('NIC ASIA BANK LIMITED').dblclick();
 
 //save
 
 await page.locator('#SaveForm').click();
+
+
 });
