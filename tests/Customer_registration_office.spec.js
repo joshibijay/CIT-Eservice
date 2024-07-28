@@ -1,14 +1,20 @@
 const { test, expect } = require('@playwright/test');
 const { timeout } = require('../playwright.config');
+import { login } from '../pages/login';
+import {randomnumber} from '../pages/randomnumber';
+import {generateRandomPhoneNumber} from '../pages/randomnumber'
 
 test('Customer Registration by office', async ({ page }) => {
  await page.goto('http://172.31.1.13:1902/',{timeout:10000});
   // login dashboard
   //import { test, expect } from '@playwright/test';
 
-    await page.locator('#Username').fill('O058555');
-    await page.locator('#Password').fill('P@ss123');
-    await page.getByRole('button', { name: 'Login' }).click();
+   const eservice_login =new login(page);
+   const generate_random_number=new randomnumber(page);
+  await eservice_login.eservicelogin('O058555','P@ss123')
+    // await page.locator('#Username').fill('O058555');
+    // await page.locator('#Password').fill('P@ss123');
+    // await page.getByRole('button', { name: 'Login' }).click();
 
     // customer registration 
 await page.getByRole('link', { name: 'Customer Registration', },).click();
@@ -70,7 +76,7 @@ await page.waitForTimeout(1500);
           // phone no.
       await page.locator('#AddressVM_PermTelNo').fill('0151230');
           // mobile no.
-      await page.locator('#AddressVM_PermMobileNo').fill('9840372836');
+      await generate_random_number.mobilenumber(generateRandomPhoneNumber);
           // email address
       await page.locator('#AddressVM_PermEmailId').fill('buzzz9397@gmail.com');
           // same as permanent
