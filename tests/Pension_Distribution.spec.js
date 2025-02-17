@@ -1,6 +1,6 @@
 const { test, expect } = require('@playwright/test');
 
-test.only('Pension Distribution', async ({ page }) => {
+test('Pension Distribution', async ({ page }) => {
     await page.goto('http://172.31.1.13:1901/');
     //login
     await page.locator('#Username').fill('bhupendra');
