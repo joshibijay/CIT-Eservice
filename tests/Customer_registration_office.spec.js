@@ -5,7 +5,7 @@ import {randomnumber} from '../pages/randomnumber';
 import {generateRandomPhoneNumber} from '../pages/randomnumber'
 
 test('Customer Registration by office', async ({ page }) => {
- await page.goto('http://172.31.1.13:1902/',{timeout:10000});
+ await page.goto('http://10.10.11.14:1901/',{timeout:100000});
   // login dashboard
   //import { test, expect } from '@playwright/test';
 
